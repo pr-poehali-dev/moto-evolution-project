@@ -15,7 +15,7 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold text-primary flex items-center gap-2">
-            🏍️ МотоЭволюция
+            🏍️ Мото-Эпохи
           </h1>
           
           {/* Кнопка бургер-меню */}
