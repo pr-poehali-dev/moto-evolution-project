@@ -50,7 +50,7 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
 
         {/* Мобильное меню */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 flex flex-col gap-2">
+          <div className="md:hidden mt-4 flex flex-col gap-2 animate-in slide-in-from-top-5 duration-300">
             {['home', 'compare', 'gallery', 'calculator', 'stories', 'contact'].map((section) => (
               <Button
                 key={section}
