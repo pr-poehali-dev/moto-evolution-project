@@ -176,8 +176,8 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
                   </TabsList>
                   {sovietBikes.map((bike, idx) => (
                     <TabsContent key={idx} value={idx.toString()} className="space-y-4">
-                      <img src={bike.image} alt={bike.name} className="w-full h-64 object-cover rounded-lg" />
-                      <h3 className="text-3xl font-bold text-secondary">{bike.name}</h3>
+                      <img src={bike.image} alt={bike.name} className="w-full h-64 px-24 py-0 my-2.5 mx-0 rounded-0 object-cover" />
+                      <h3 className="text-secondary font-normal text-3xl">{bike.name}</h3>
                       <Badge variant="secondary">{bike.year}</Badge>
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
