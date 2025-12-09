@@ -14,7 +14,10 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b-2 border-primary/20 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold text-primary flex items-center gap-2">
+          <h1 
+            className="text-3xl font-bold text-primary flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => onSectionChange('home')}
+          >
             🏍️ Мото-Эпохи
           </h1>
           
