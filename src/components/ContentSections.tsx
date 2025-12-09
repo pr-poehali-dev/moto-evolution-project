@@ -34,7 +34,7 @@ const sovietBikes = [
     speed: '100 км/ч',
     price: '900 руб.',
     priceEquiv: '~90 кг колбасы',
-    image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=800&q=80'
+    image: 'https://cdn.poehali.dev/files/photo_2025-12-09_22-06-32.jpg'
   }
 ];
 
