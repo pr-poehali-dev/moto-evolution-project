@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import Icon from '@/components/ui/icon';
 
 interface NavigationProps {
   activeSection: string;
@@ -6,6 +8,8 @@ interface NavigationProps {
 }
 
 export default function Navigation({ activeSection, onSectionChange }: NavigationProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b-2 border-primary/20 shadow-md">
       <div className="container mx-auto px-4 py-4">
@@ -13,7 +17,19 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
           <h1 className="text-3xl font-bold text-primary flex items-center gap-2">
             🏍️ МотоЭволюция
           </h1>
-          <div className="flex gap-2 flex-wrap">
+          
+          {/* Кнопка бургер-меню */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden"
+          >
+            <Icon name="Menu" size={24} />
+          </Button>
+
+          {/* Навигация для десктопа */}
+          <div className="hidden md:flex gap-2 flex-wrap">
             {['home', 'compare', 'gallery', 'calculator', 'stories', 'contact'].map((section) => (
               <Button
                 key={section}
@@ -31,6 +47,30 @@ export default function Navigation({ activeSection, onSectionChange }: Navigatio
             ))}
           </div>
         </div>
+
+        {/* Мобильное меню */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 flex flex-col gap-2">
+            {['home', 'compare', 'gallery', 'calculator', 'stories', 'contact'].map((section) => (
+              <Button
+                key={section}
+                variant={activeSection === section ? 'default' : 'outline'}
+                onClick={() => {
+                  onSectionChange(section);
+                  setIsMenuOpen(false);
+                }}
+                className="stamp-shadow w-full"
+              >
+                {section === 'home' && 'Главная'}
+                {section === 'compare' && 'Сравнение'}
+                {section === 'gallery' && 'Галерея'}
+                {section === 'calculator' && 'Калькулятор'}
+                {section === 'stories' && 'Истории'}
+                {section === 'contact' && 'Контакты'}
+              </Button>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );
