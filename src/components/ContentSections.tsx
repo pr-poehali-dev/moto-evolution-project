@@ -119,6 +119,7 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
   const [selectedModern, setSelectedModern] = useState(0);
   const [quizStep, setQuizStep] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState<number[]>([]);
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   const handleQuizAnswer = (answerIndex: number) => {
     const newAnswers = [...quizAnswers, answerIndex];
@@ -134,16 +135,28 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
     }
   };
 
+  const toggleSection = (section: string) => {
+    setExpandedSection(expandedSection === section ? null : section);
+  };
+
   return (
     <>
       {activeSection === 'compare' && (
         <div className="space-y-8 animate-in fade-in duration-500">
-          <div className="text-center space-y-4">
-            <h2 className="text-5xl font-bold text-primary">Лицом к лицу</h2>
+          <div 
+            className="text-center space-y-4 cursor-pointer" 
+            onClick={() => toggleSection('compare')}
+          >
+            <div className="flex items-center justify-center gap-4">
+              <h2 className="text-5xl font-bold text-primary">Лицом к лицу</h2>
+              <Icon name={expandedSection === 'compare' ? 'ChevronUp' : 'ChevronDown'} size={40} className="text-primary" />
+            </div>
             <p className="text-xl text-muted-foreground">
               Выберите пару мотоциклов для сравнения
             </p>
           </div>
+
+          {expandedSection === 'compare' && (
 
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="stamp-shadow border-2 border-secondary">
@@ -240,18 +253,26 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
               </CardContent>
             </Card>
           </div>
+          )}
         </div>
       )}
 
       {activeSection === 'gallery' && (
         <div className="space-y-8 animate-in fade-in duration-500">
-          <div className="text-center space-y-4">
-            <h2 className="text-5xl font-bold text-primary">Галерея времени</h2>
+          <div 
+            className="text-center space-y-4 cursor-pointer" 
+            onClick={() => toggleSection('gallery')}
+          >
+            <div className="flex items-center justify-center gap-4">
+              <h2 className="text-5xl font-bold text-primary">Галерея времени</h2>
+              <Icon name={expandedSection === 'gallery' ? 'ChevronUp' : 'ChevronDown'} size={40} className="text-primary" />
+            </div>
             <p className="text-xl text-muted-foreground">
               Легендарные мотоциклы в историческом контексте
             </p>
           </div>
 
+          {expandedSection === 'gallery' && (
           <div className="grid md:grid-cols-3 gap-6">
             {[...sovietBikes, ...modernBikes].map((bike, idx) => (
               <Card key={idx} className="overflow-hidden hover-scale stamp-shadow">
@@ -266,18 +287,26 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
               </Card>
             ))}
           </div>
+          )}
         </div>
       )}
 
       {activeSection === 'calculator' && (
         <div className="space-y-8 animate-in fade-in duration-500 max-w-3xl mx-auto">
-          <div className="text-center space-y-4">
-            <h2 className="text-5xl font-bold text-primary">Калькулятор ностальгии</h2>
+          <div 
+            className="text-center space-y-4 cursor-pointer" 
+            onClick={() => toggleSection('calculator')}
+          >
+            <div className="flex items-center justify-center gap-4">
+              <h2 className="text-5xl font-bold text-primary">Калькулятор ностальгии</h2>
+              <Icon name={expandedSection === 'calculator' ? 'ChevronUp' : 'ChevronDown'} size={40} className="text-primary" />
+            </div>
             <p className="text-xl text-muted-foreground">
               Какой советский мотоцикл вам подходит?
             </p>
           </div>
 
+          {expandedSection === 'calculator' && (
           <Card className="stamp-shadow">
             <CardHeader>
               <CardTitle className="text-2xl">
@@ -300,18 +329,26 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
               </div>
             </CardContent>
           </Card>
+          )}
         </div>
       )}
 
       {activeSection === 'stories' && (
         <div className="space-y-8 animate-in fade-in duration-500">
-          <div className="text-center space-y-4">
-            <h2 className="text-5xl font-bold text-primary">Истории владельцев</h2>
+          <div 
+            className="text-center space-y-4 cursor-pointer" 
+            onClick={() => toggleSection('stories')}
+          >
+            <div className="flex items-center justify-center gap-4">
+              <h2 className="text-5xl font-bold text-primary">Истории владельцев</h2>
+              <Icon name={expandedSection === 'stories' ? 'ChevronUp' : 'ChevronDown'} size={40} className="text-primary" />
+            </div>
             <p className="text-xl text-muted-foreground">
               Реальные люди, реальные мотоциклы, разные эпохи
             </p>
           </div>
 
+          {expandedSection === 'stories' && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {stories.map((story, idx) => (
               <Card key={idx} className="stamp-shadow hover-scale">
@@ -329,18 +366,26 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
               </Card>
             ))}
           </div>
+          )}
         </div>
       )}
 
       {activeSection === 'contact' && (
         <div className="space-y-8 animate-in fade-in duration-500 max-w-2xl mx-auto">
-          <div className="text-center space-y-4">
-            <h2 className="text-5xl font-bold text-primary">Контакты</h2>
+          <div 
+            className="text-center space-y-4 cursor-pointer" 
+            onClick={() => toggleSection('contact')}
+          >
+            <div className="flex items-center justify-center gap-4">
+              <h2 className="text-5xl font-bold text-primary">Контакты</h2>
+              <Icon name={expandedSection === 'contact' ? 'ChevronUp' : 'ChevronDown'} size={40} className="text-primary" />
+            </div>
             <p className="text-xl text-muted-foreground">
               Поделитесь своей историей или предложите улучшения
             </p>
           </div>
 
+          {expandedSection === 'contact' && (
           <Card className="stamp-shadow">
             <CardContent className="pt-6 space-y-6">
               <div className="flex items-center gap-4 p-4 bg-accent/10 rounded-lg">
@@ -366,6 +411,7 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
               </div>
             </CardContent>
           </Card>
+          )}
         </div>
       )}
     </>
