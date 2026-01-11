@@ -14,7 +14,7 @@ const sovietBikes = [
     speed: '120 км/ч',
     price: '1800 руб.',
     priceEquiv: '~180 кг колбасы',
-    image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80'
+    image: 'https://cdn.poehali.dev/files/62b5fa313bc4e45a4914f981-1.jpg'
   },
   {
     name: 'Днепр МТ-11',
