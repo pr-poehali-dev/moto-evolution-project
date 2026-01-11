@@ -399,7 +399,7 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
                 <Icon name="MessageCircle" size={32} className="text-primary" />
                 <div>
                   <p className="font-semibold">Telegram</p>
-                  <p className="text-muted-foreground">@motoevolution</p>
+                  <p className="text-muted-foreground">@motoevolution_bot</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-accent/10 rounded-lg">
