@@ -406,7 +406,7 @@ export default function ContentSections({ activeSection }: ContentSectionsProps)
                 <Icon name="Phone" size={32} className="text-primary" />
                 <div>
                   <p className="font-semibold">Телефон</p>
-                  <p className="text-muted-foreground">+7 (900) 123-45-67</p>
+                  <p className="text-muted-foreground">+79247162145</p>
                 </div>
               </div>
             </CardContent>
