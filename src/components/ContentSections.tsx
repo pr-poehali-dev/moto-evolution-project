@@ -47,7 +47,7 @@ const modernBikes = [
     speed: '125 км/ч',
     price: '₽1 800 000',
     priceEquiv: '~12 зарплат',
-    image: 'https://images.unsplash.com/photo-1558980664-769d59546b3d?w=800&q=80'
+    image: 'https://cdn.poehali.dev/files/222199_1_350.jpg'
   },
   {
     name: 'Royal Enfield Himalayan',
