@@ -57,7 +57,7 @@ const modernBikes = [
     speed: '140 км/ч',
     price: '₽450 000',
     priceEquiv: '~3 зарплаты',
-    image: 'https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?w=800&q=80'
+    image: 'https://cdn.poehali.dev/files/1200x900.jpg'
   },
   {
     name: 'Honda CB650R',
