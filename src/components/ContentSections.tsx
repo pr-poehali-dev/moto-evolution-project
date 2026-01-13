@@ -67,7 +67,7 @@ const modernBikes = [
     speed: '220 км/ч',
     price: '₽950 000',
     priceEquiv: '~6 зарплат',
-    image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&q=80'
+    image: 'https://cdn.poehali.dev/files/1052162939169-sx1920x1080g174175.jpg'
   }
 ];
 
